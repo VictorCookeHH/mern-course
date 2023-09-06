@@ -21,7 +21,7 @@ const StatsContainer = ({ stats }) => {
     },
     {
       title: 'declined applications',
-      count: stats?.pending || 0,
+      count: stats?.declined || 0,
       icon: <FaBug />,
       color: '#d66a6a',
       bgc: '#ffeeee',

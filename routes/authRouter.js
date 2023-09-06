@@ -4,7 +4,6 @@ import {
   validateLoginInput,
   validateRegisterInput,
 } from '../middleware/validationMiddleware.js'
-import rateLimiter from 'express-rate-limit'
 
 const router = Router()
 
