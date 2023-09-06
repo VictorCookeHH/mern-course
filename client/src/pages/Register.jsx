@@ -9,12 +9,7 @@ const Register = () => {
         <Logo />
         <h4>Register</h4>
         <FormRow type="text" name="name" />
-        <FormRow
-          type="text"
-          name="lastName"
-          labelText="last name"
-          defaultValue="Cooke"
-        />
+        <FormRow type="text" name="lastName" labelText="last name" />
         <FormRow type="location" name="location" />
         <FormRow type="email" name="email" />
         <FormRow type="password" name="password" />
