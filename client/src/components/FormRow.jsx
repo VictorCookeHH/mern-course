@@ -6,6 +6,7 @@ const FormRow = ({
   defaultValue,
   placeholder,
   onChange,
+  required = true,
 }) => {
   return (
     <div className="form-row">
@@ -20,7 +21,7 @@ const FormRow = ({
         placeholder={placeholder || ''}
         defaultValue={defaultValue || ''}
         onChange={onChange}
-        required
+        required={required}
       />
     </div>
   )

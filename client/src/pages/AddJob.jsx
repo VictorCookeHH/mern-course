@@ -11,7 +11,12 @@ const AddJob = () => {
         <div className="form-center">
           <FormRow type="text" name="position" placeholder="Frontend" />
           <FormRow type="text" name="company" placeholder="Apple" />
-          <FormRow type="text" name="notes" placeholder="Applied on 9/3/2023" />
+          <FormRow
+            type="text"
+            name="notes"
+            placeholder="Applied on 9/3/2023"
+            required={false}
+          />
           <FormRow
             type="url"
             name="jobUrl"
