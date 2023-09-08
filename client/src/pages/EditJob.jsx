@@ -13,7 +13,12 @@ const EditJob = () => {
         <div className="form-center">
           <FormRow type="text" name="position" defaultValue={job.position} />
           <FormRow type="text" name="company" defaultValue={job.company} />
-          <FormRow type="text" name="notes" defaultValue={job.notes || ''} />
+          <FormRow
+            type="text"
+            name="notes"
+            defaultValue={job.notes || ''}
+            required={false}
+          />
           <FormRow
             type="text"
             name="jobUrl"
