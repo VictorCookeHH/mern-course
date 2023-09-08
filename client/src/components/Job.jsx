@@ -16,6 +16,7 @@ const Job = ({
   jobStatus,
   createdAt,
   jobLocation,
+  notes,
 }) => {
   const date = day(createdAt).format('MMMM Do, YYYY')
   return (
@@ -35,6 +36,7 @@ const Job = ({
           <JobInfo icon={<FaCalendarAlt />} text={date} />
           <JobInfo icon={<FaBriefcase />} text={jobType} />
           <div className={`status ${jobStatus}`}> {jobStatus}</div>
+          <div> {notes}</div>
         </div>
         <footer className="actions">
           <Link className="btn edit-btn" to={`../edit-job/${_id}`}>

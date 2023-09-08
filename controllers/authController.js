@@ -20,7 +20,7 @@ export const login = async (req, res) => {
     user && (await comparePasswords(req.body.password, user.password))
   if (!isAuthorized) throw new UnauthenticatedError('Invalid Credentials')
   const token = createJWT({ id: user._id, role: user.role })
-  const sevenDays = 1000 * 60 * 60 * 24 * 7
+  const sevenDays = 1000 * 60 * 60 * 24 * process.env.JWT_EXPIRES_IN[0]
   res.cookie('token', token, {
     httpOnly: true,
     expires: new Date(Date.now() + sevenDays),

@@ -13,6 +13,7 @@ const EditJob = () => {
         <div className="form-center">
           <FormRow type="text" name="position" defaultValue={job.position} />
           <FormRow type="text" name="company" defaultValue={job.company} />
+          <FormRow type="text" name="notes" defaultValue={job.notes || ''} />
           <FormRow
             type="text"
             name="jobUrl"
@@ -37,7 +38,7 @@ const EditJob = () => {
             list={Object.values(JOB_LOCATION)}
             defaultValue={JOB_LOCATION.REMOTE}
           />
-          <SubmitBtn />
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>
