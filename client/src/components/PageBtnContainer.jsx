@@ -44,7 +44,7 @@ const PageBtnContainer = () => {
     if (currentPage !== 1 && currentPage !== 2) {
       pageButtons.push(
         addPageButton({
-          pageNumber: currentPage,
+          pageNumber: currentPage - 1,
           activeClass: false,
         })
       )
@@ -67,7 +67,7 @@ const PageBtnContainer = () => {
     }
     if (currentPage < numOfPages - 2) {
       pageButtons.push(
-        <span className="page-btn dots" key="dots+11">
+        <span className="page-btn dots" key="dots+1">
           ...
         </span>
       )
