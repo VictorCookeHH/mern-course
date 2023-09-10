@@ -66,8 +66,12 @@ export const deleteJob = async (req, res) => {
 }
 
 export const showStats = async (req, res) => {
+  const createdBy =
+    req.user.role !== 'admin'
+      ? new mongoose.Types.ObjectId(req.user.id)
+      : { $ne: null }
   let stats = await Job.aggregate([
-    { $match: { createdBy: new mongoose.Types.ObjectId(req.user.id) } },
+    { $match: { createdBy: createdBy } },
     { $group: { _id: '$jobStatus', count: { $sum: 1 } } },
   ])
   stats = stats.reduce((acc, curr) => {
@@ -81,7 +85,7 @@ export const showStats = async (req, res) => {
     declined: stats.declined || 0,
   }
   let monthlyApplications = await Job.aggregate([
-    { $match: { createdBy: new mongoose.Types.ObjectId(req.user.id) } },
+    { $match: { createdBy: createdBy } },
     {
       $group: {
         _id: {
