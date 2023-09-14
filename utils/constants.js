@@ -2,6 +2,7 @@ export const JOB_STATUS = {
   PENDING: 'pending',
   INTEVIEW: 'interview',
   DECLINE: 'declined',
+  HIRED: 'hired',
 }
 
 export const JOB_TYPE = {
